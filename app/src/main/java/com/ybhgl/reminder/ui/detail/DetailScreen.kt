@@ -801,7 +801,7 @@ fun ShareableReminderImage(
     ) {
         Box(modifier = modifier) {
             Image(
-                painter = painterResource(id = R.drawable.background),
+                painter = painterResource(id = R.drawable.bg_card),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.matchParentSize()
