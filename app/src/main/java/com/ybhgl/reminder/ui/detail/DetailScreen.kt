@@ -6,6 +6,7 @@ import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.*
@@ -933,7 +934,7 @@ fun ReminderDetailCard(
                             .fillMaxWidth()
                             .weight(0.22f)
                             .heightIn(min = 88.dp)
-                            androidx.compose.foundation.background(visuals.headerColor),
+                            .background(visuals.headerColor),
                         contentAlignment = Alignment.Center
                     ) {
                         val title = displayInfo.headerTitle
@@ -960,7 +961,7 @@ fun ReminderDetailCard(
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(0.56f)
-                            androidx.compose.foundation.background(visuals.cardBackground)
+                            .background(visuals.cardBackground)
                             .padding(24.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
@@ -983,7 +984,7 @@ fun ReminderDetailCard(
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(0.22f)
-                            androidx.compose.foundation.background(visuals.footerBackground)
+                            .background(visuals.footerBackground)
                             .then(clickableModifier),
                         contentAlignment = Alignment.Center
                     ) {
@@ -1263,7 +1264,7 @@ fun ModifyTagDialog(
                                 Box(
                                     modifier = Modifier
                                         .size(12.dp)
-                                        androidx.compose.foundation.background(baseColor, shape = CircleShape)
+                                        .background(baseColor, shape = CircleShape)
                                 )
                             },
                             colors = FilterChipDefaults.filterChipColors(
