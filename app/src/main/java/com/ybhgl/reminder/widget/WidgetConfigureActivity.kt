@@ -150,6 +150,7 @@ fun WidgetConfigureScreen(
     var reminders by remember { mutableStateOf<List<ReminderItem>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
     val widgetCardShape = RoundedCornerShape(16.dp)
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     // Transparency State (0-100)
     var opacity by remember { mutableStateOf(initialOpacity.toFloat()) }
@@ -532,13 +533,13 @@ fun WidgetConfigureScreen(
                         Button(
                             onClick = {
                                 // 保存自定义主题配置到 SharedPreferences
-                                val ctx = androidx.compose.ui.platform.LocalContext.current
-                                WidgetConfigStore.saveBackgroundType(ctx, appWidgetId, bgType)
-                                WidgetConfigStore.saveBackgroundColor(ctx, appWidgetId, bgColorHex)
-                                WidgetConfigStore.saveAccentColor(ctx, appWidgetId, accentColorHex)
-                                WidgetConfigStore.saveCustomTitle(ctx, appWidgetId, customTitle)
-                                WidgetConfigStore.saveShowDate(ctx, appWidgetId, showDate)
-                                WidgetConfigStore.saveShowLabel(ctx, appWidgetId, showLabel)
+                                WidgetConfigStore.saveBackgroundType(context, appWidgetId, bgType)
+                                WidgetConfigStore.saveBackgroundType(context, appWidgetId, bgType)
+                                WidgetConfigStore.saveBackgroundColor(context, appWidgetId, bgColorHex)
+                                WidgetConfigStore.saveAccentColor(context, appWidgetId, accentColorHex)
+                                WidgetConfigStore.saveCustomTitle(context, appWidgetId, customTitle)
+                                WidgetConfigStore.saveShowDate(context, appWidgetId, showDate)
+                                WidgetConfigStore.saveShowLabel(context, appWidgetId, showLabel)
 
                                 if (isSingleSelection) {
                                     onSave(selectedReminderId, "", emptySet(), opacity.toInt(), reminders)
